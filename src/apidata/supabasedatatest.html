@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<script type="module">
+  import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
+
+  const supabase = createClient(
+    'https://imvnyjrfwjeeifqvovin.supabase.co',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imltdm55anJmd2plZWlmcXZvdmluIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc0OTU0NTgsImV4cCI6MjA4MzA3MTQ1OH0.5VWcImLjueZiM1ba4wzItClo5IXBk_3D6P3ETkCtAEQ'
+  );
+
+  const { data, error } = await supabase
+    .from('users')
+    .select('*')
+    .limit(5);
+
+  if (error) {
+    document.body.innerHTML = '❌ ' + error.message;
+  } else {
+    document.body.innerHTML = '✅ Connected<br>' + JSON.stringify(data);
+  }
+</script>
+</body>
+</html>

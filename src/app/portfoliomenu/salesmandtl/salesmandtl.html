@@ -1,0 +1,103 @@
+<!--
+<h1>Sales executive details</h1>
+/*
+
+    "userid": 1002893, 
+    "username": "DOUGLAS BROOKS",  
+    "country": "US",  
+    "countrydesc": "DURHAM",  
+    "hired": "2011-12-01",  
+    "active": 1,  
+    "sales": 1003} 
+
+*/
+
+-->
+
+<h1 mat-dialog-title>Sales executive details</h1>
+
+<div cdkDrag cdkDragRootElement=".cdk-overlay-pane">
+
+        <mat-dialog-content>
+            <table class="tableAPI">
+                <tbody>
+                    <tr>              
+                        <th class="tableTH">Field</th>
+                        <th class="tableTH">Value</th>
+                    </tr>
+                    @for (usersA of postsANY; track usersA.userid; let index = $index ) {
+                            <tr>
+                                <td class="tableTDLeft">
+                                    ID
+                                </td >
+                                <td class="tableTDLeft2">{{ usersA.userid }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableTDLeft">
+                                    Name
+                                </td>
+                                <td class="tableTDLeft2">{{ usersA.username }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableTDLeft">
+                                    Country Code
+                                </td>
+                                <td class="tableTDLeft2">{{ usersA.country }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableTDLeft">
+                                    Country Description
+                                </td>
+                                <td class="tableTDLeft2">{{ usersA.countrydesc }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableTDLeft">
+                                    Date Hired
+                                </td>
+                                <td class="tableTDLeft2">{{ usersA.hired }} </td>
+                            </tr>
+
+                            <tr>
+                                <td class="tableTDLeft">
+                                    Active
+                                </td>
+                                <td class="tableTDLeft2">
+                                    <mat-checkbox [checked]="usersA.active === 1" disabled ></mat-checkbox>
+                                </td>
+                            </tr>
+
+                                <tr>
+                                <td class="tableTDLeft">
+                                    Sales 
+                                </td>
+                                <td class="tableTDLeft2">{{ usersA.sales | number:'1.2-2' }} </td>
+                            </tr>
+
+                    }    @empty {
+                            <tr>
+                                <td colspan="4" class="tableTDCenter"> < No record found > </td>
+                            </tr>
+                    
+                    }
+
+                </tbody>
+            </table>
+
+        </mat-dialog-content>
+
+        <mat-dialog-actions align="center">
+            <button mat-button (click)="close()">Close</button>
+        </mat-dialog-actions>
+
+</div>
+
+
+
+
+
+
+

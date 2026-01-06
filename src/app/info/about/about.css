@@ -1,0 +1,38 @@
+.rotate{
+   width:80px;
+   height:80px;
+   animation: rotation infinite 3s linear;
+}
+
+:host {
+  display: block;
+  padding: 16px;
+}
+
+
+@keyframes rotation{
+  from{
+    transform:rotate(0deg);     /*    transform:rotate(-0deg);   */
+  }
+
+  to{
+    transform:rotate(360deg);   /*    transform:rotate(-360deg); */
+  }
+}
+
+
+.rotateanti{
+   width:80px;
+   height:80px;
+   animation: rotationanti infinite 3s linear;
+}
+
+@keyframes rotationanti{
+  from{
+    transform:rotate(-0deg);
+  }
+
+  to{
+    transform:rotate(-360deg);
+  }
+}

@@ -1,0 +1,175 @@
+
+<h2>Users Maintenance</h2>
+
+<!-- 
+DB: supabase
+-->
+
+<form #userForm="ngForm">
+        <div class="div1">
+        <mat-form-field appearance="outline">
+            <mat-label>Name</mat-label>
+            <input
+                    matInput
+                    title="UserName"
+                    [(ngModel)]="newUser.name"
+                    name="name"     
+                    required
+                    #nameModel="ngModel"
+            >
+            <mat-error *ngIf="nameModel.invalid && nameModel.touched">
+            Name is required
+            </mat-error>
+        </mat-form-field>
+
+        &nbsp;&nbsp; 
+
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input
+                    matInput
+                    title="UserEmail"
+                    [(ngModel)]="newUser.email"
+                    name="email" 
+                    required
+                    email
+                    #emailModel="ngModel"      
+            >
+            <mat-error *ngIf="emailModel.errors?.['required'] && emailModel.touched">
+            Email is required
+            </mat-error>
+            <mat-error *ngIf="emailModel.errors?.['email'] && emailModel.touched">
+            Invalid email format
+            </mat-error>
+        </mat-form-field>
+
+            &nbsp;&nbsp;
+            <!-- 
+            <button 
+                mat-raised-button 
+                color="primary" 
+                (click)="add()"
+                [disabled]="nameModel.invalid || emailModel.invalid">Add
+            </button>
+            -->
+            <button
+                mat-raised-button
+                color="primary"
+                (click)="add(userForm)"
+                [disabled]="userForm.invalid"
+            >
+                Add
+            </button>
+
+        </div>
+</form>
+
+
+<!-- 
+<table border="1" width="100%">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of users; let i = index">
+     
+        <td>{{ user.id }}</td>
+
+        <td>
+            <span *ngIf="!user.editing">{{ user.name }}</span>
+            <input title="UserName" *ngIf="user.editing" [(ngModel)]="user.name" />
+        </td>
+
+        <td>
+            <span *ngIf="!user.editing">{{ user.email }}</span>
+            <input title="UserEmail" *ngIf="user.editing" [(ngModel)]="user.email" />
+        </td>
+
+        <td>
+            <button *ngIf="!user.editing" (click)="startEdit(user)">Edit</button>
+
+            <button *ngIf="user.editing" (click)="saveEdit(user)">Save</button>
+            <button *ngIf="user.editing" (click)="cancelEdit(user)">Cancel</button>
+
+            <button *ngIf="!user.editing" (click)="delete(user.id)">Delete</button>
+
+        </td>
+
+    </tr>
+  </tbody>
+</table>
+-->
+
+<table mat-table [dataSource]="users" class="mat-elevation-z8" style="width:100%">
+
+  <!-- ID -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef>ID</th>
+    <td mat-cell *matCellDef="let user">{{ user.id }}</td>
+  </ng-container>
+
+  <!-- NAME -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef>Name</th>
+    <td mat-cell *matCellDef="let user">
+      <span *ngIf="!user.editing">{{ user.name }}</span>
+
+      <mat-form-field *ngIf="user.editing" appearance="outline">
+        <input title="mUserName" matInput [(ngModel)]="user.name">
+      </mat-form-field>
+    </td>
+  </ng-container>
+
+  <!-- EMAIL -->
+  <ng-container matColumnDef="email">
+    <th mat-header-cell *matHeaderCellDef>Email</th>
+    <td mat-cell *matCellDef="let user">
+      <span *ngIf="!user.editing">{{ user.email }}</span>
+
+      <mat-form-field *ngIf="user.editing" appearance="outline">
+        <input title="mUserEmail" matInput [(ngModel)]="user.email">
+      </mat-form-field>
+    </td>
+  </ng-container>
+
+  <!-- ACTIONS -->
+  <ng-container matColumnDef="actions">
+    <th mat-header-cell *matHeaderCellDef>Actions</th>
+    <td mat-cell *matCellDef="let user">
+
+      <button mat-icon-button color="primary"
+              *ngIf="!user.editing"
+              (click)="startEdit(user)">
+        <mat-icon>edit</mat-icon>
+      </button>
+
+      <button mat-icon-button color="accent"
+              *ngIf="user.editing"
+              (click)="saveEdit(user)">
+        <mat-icon>check</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn"
+              *ngIf="user.editing"
+              (click)="cancelEdit(user)">
+        <mat-icon>close</mat-icon>
+      </button>
+
+      <button mat-icon-button color="warn"
+              *ngIf="!user.editing"
+              (click)="delete(user.id)">
+        <mat-icon>delete</mat-icon>
+      </button>
+
+    </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+
+</table>

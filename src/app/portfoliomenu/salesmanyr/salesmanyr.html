@@ -1,0 +1,42 @@
+<h1>Sales dashboard YTD</h1>
+
+<br>
+<table  class="tblBorder">
+  <tbody>
+        <tr >
+                <td class="tblTD">               
+                    <div class="Chart2">        
+                    <canvas id="apiDataChartLine" *ngIf="isBrowser"></canvas>
+                    </div>             
+                </td>
+        </tr>
+        <tr >
+                <td class="tblTD"><br>                  
+                    <div class="Chart2">
+                    <canvas id="apiDataChartBar" *ngIf="isBrowser"></canvas>
+                    </div>             
+                </td>
+        </tr>
+   </tbody>
+</table>
+
+ <BR><B>Chart Data:</B><BR>
+    <table class="tableAPI">
+      <tbody>
+          <tr>
+            <th class="tableTH">Year</th>
+            <th class="tableTH">Amount</th>
+          </tr>   
+          <tr *ngFor="let item of rows">  
+            <td class="tableTDLeft">  {{ item.labels }}    </td> 
+            <td class="tableTDRight">  {{ item.data | number:'1.2-2' }}  </td> 
+          </tr>
+       </tbody> 
+    </table>
+
+<!-- 
+<p *ngIf="rows.length === 0">NO DATA</p>
+<p *ngIf="rows.length > 0">ROWS FOUND: {{ rows.length }}</p>
+-->
+
+<BR><BR>

@@ -1,0 +1,48 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.Chart2 {
+    vertical-align: top;
+    height: 325px;
+    width: 650px; 
+    background-color: rgb(232, 244, 177);   
+}
+
+.tableAPI {
+    
+    border-collapse: collapse;
+}
+
+/* width: 400px; */
+
+.table th, .table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.tableTH {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  color: white;
+  background: rgb(118, 118, 247) ;
+  font-weight: lighter;
+}
+.tableTDLeft {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  height: 5px;
+  width: 70px;
+}
+
+.tableTDRight {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  height: 5px;
+  text-align: right;
+  width: 90px;
+}

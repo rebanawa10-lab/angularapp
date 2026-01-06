@@ -1,0 +1,11 @@
+
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.div1 {
+    display:flex; 
+    gap:10px; 
+    margin-bottom:15px;
+}

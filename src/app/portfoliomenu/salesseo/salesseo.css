@@ -1,0 +1,64 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+.tableAPI {
+    width: 550px;
+    border-collapse: collapse;
+}
+
+/* width: 450px; */
+
+.table th, .table td {
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+
+.tableTH {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  color: white;
+  background: rgb(118, 118, 247) ;
+  font-weight: lighter;
+}
+.tableTDLeft {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  height: 5px;
+  width: 70px;
+}
+
+.tableTDRight {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  height: 5px;
+  text-align: right;
+  width: 90px;
+}
+
+.tableTDRight2 {
+  padding: 8px;
+  
+  height: 5px;
+  text-align: center;
+  width: 90px;
+  border-collapse: collapse;
+}
+/* 
+border: 1px solid #ccc;
+  border-color: black;
+  */ 
+
+
+.tableTDCenter {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-color: black;
+  height: 5px;
+  text-align: center;
+  
+}

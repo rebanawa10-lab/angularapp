@@ -1,0 +1,76 @@
+<h1>Executive list</h1>
+Filter the demo data with <i>search engine optimation</i> (SEO).<br><br><br>
+
+
+<strong>Filter:</strong>
+    &nbsp;&nbsp;
+    <mat-form-field appearance="outline" [floatLabel]="'always'">
+        <mat-label>Name: </mat-label>
+        <input matInput [(ngModel)]="gUsername" placeholder="Enter name" (ngModelChange)="onSearch($event)" >
+    </mat-form-field>
+    &nbsp;&nbsp;
+    <mat-form-field appearance="outline" [floatLabel]="'always'">
+        <mat-label>Country code: </mat-label>
+        <input matInput [(ngModel)]="gCountry" placeholder="Enter country code" (ngModelChange)="onSearch($event)" >
+    </mat-form-field>
+
+<br>
+
+<br><strong>Output:</strong>
+   
+     &nbsp;&nbsp; &nbsp;&nbsp;
+    <table class="tableAPI">
+        <tbody>
+            <tr>
+                <th class="tableTH">#</th>
+                <th class="tableTH">Name</th>
+                <th class="tableTH">Country code</th>
+                <th class="tableTH">&nbsp;</th>
+            </tr> 
+            @for (usersA of postsANY; track usersA.username; let index = $index ) {       
+                    <tr>
+                        <td class="tableTD">{{ index+1 }}. </td>
+                        <td class="tableTD">{{ usersA.username }} </td>
+
+                        <td class="tableTD">{{ usersA.country }} </td>
+                        <td class="tableTDRight2">
+
+                            <a href="javascript:void(0)" (click)="openPopup(usersA.userid)">
+                                View
+                            </a>
+                                                
+                            <!-- 
+
+                            WORK:
+                                <a href="/salesmandtl?userid=1002893" target="_blank" rel="noopener">View1</a> &nbsp; &nbsp;
+
+                                <a
+                                    [href]="'/salesmandtl?userid=' + usersA.userid"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    View
+                                </a>
+
+                            NOT WORKING:
+                                <a href="/salesmandtl?userid=" +  {{ usersA.userid }} target="_blank" rel="noopener">View2C</a> &nbsp; &nbsp;
+
+                                <a href="'/salesmandtl?userid=' + usersA.userid" target="_blank" rel="noopener">View2A</a> &nbsp; &nbsp;
+
+                                <a href="'/salesmandtl?userid='" + {{ usersA.userid }} target="_blank" rel="noopener">View2B</a>&nbsp; &nbsp;
+                            
+                                -->
+          
+                        </td>
+                               
+                    </tr>
+                
+            }    @empty {
+                    <tr>
+                        <td colspan="4" class="tableTDCenter"> < List empty > </td>
+                    </tr>
+            
+             }
+        </tbody>
+    </table>
+

@@ -1,0 +1,70 @@
+.app-container {
+  height: 100vh;
+  background-color: white;
+   
+}
+
+.app-sidenav {
+  width: 230px;      /* fixed width */
+}
+
+   
+/* Parent - Submenu ---------- ---------- ---------- ---------- ---------- */
+menu-container {
+  position: relative;
+}
+
+/* Parent wrapper */
+.menu-item-with-sub {
+  position: relative;
+}
+
+/* Submenu initially hidden */
+.submenu {
+  display: none;
+  position: absolute;
+  left: 50px;               /* push to the right of parent list */
+  top: 0;
+  background: white;
+  z-index: 1000;
+
+  border: 1px solid #ddd; 
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.2);
+  
+  font-size: 16px;
+  font-weight: bold;
+  width: 50px;             /* submenu width */
+}
+
+/* underline hover transition */
+.underline-hover::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 0.5px;                          /* underline thick */
+  width: 0;                             /* 0 apply fading transaction */
+  background-color:  blue;
+  transition: width 0.5s;
+  border-bottom: 1px solid transparent; /* 3px thick, invisible by default */
+  padding-bottom: 2px;                  /* Space between text and underline */
+}
+
+.underline-hover:hover::after {
+  width: 150px;
+}
+
+/* remove the default underline all in one with the anchor element selector */
+a {
+  text-decoration: none;
+}
+
+
+/* remove rounded corners + ripple together (flat list) */
+::ng-deep .mat-mdc-list-item {
+  border-radius: 0 !important;
+}
+
+::ng-deep .mat-mdc-list-item .mdc-list-item__ripple {
+  display: none;
+}

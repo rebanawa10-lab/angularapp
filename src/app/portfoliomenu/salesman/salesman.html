@@ -1,0 +1,31 @@
+
+<h1> Sales executive</h1>
+Record list, filtering, sorting, and paging.<br><br>
+
+<div class="aggridDivMain">
+
+    <p class="aggrid2" >
+            Theme:
+            <select id=themelst class="dropdownlst" [(ngModel)]="theme">
+              <option *ngFor="let theme of themes" [ngValue]="theme.theme">
+                  {{ theme.label }}
+              </option>
+            </select>
+    </p>
+
+
+    <div class="aggridDivSub">
+        <ag-grid-angular          
+             class="aggrid"
+            [rowData]="rowData"
+            [columnDefs]="columnDefs"      
+            [defaultColDef]="defaultColDef"
+            [pagination]="true"
+            [paginationPageSize]="15"
+            [paginationPageSizeSelector] = "[10, 15, 20, 25, 50, 100]"
+            [theme]="theme">
+        </ag-grid-angular>
+    </div>
+    <!-- No of Record(s): {{ this.strNoOfRecords }} -->
+
+</div>
