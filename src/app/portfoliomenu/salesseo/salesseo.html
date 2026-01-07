@@ -1,5 +1,5 @@
 <h1>Executive list</h1>
-Filter the demo data with <i>search engine optimation</i> (SEO).<br><br><br>
+Dynamic search<br><br><br>
 
 
 <strong>Filter:</strong>
@@ -7,12 +7,17 @@ Filter the demo data with <i>search engine optimation</i> (SEO).<br><br><br>
     <mat-form-field appearance="outline" [floatLabel]="'always'">
         <mat-label>Name: </mat-label>
         <input matInput [(ngModel)]="gUsername" placeholder="Enter name" (ngModelChange)="onSearch($event)" >
+         <mat-label>(e.g: t, ta, tan) </mat-label>
     </mat-form-field>
+     
     &nbsp;&nbsp;
     <mat-form-field appearance="outline" [floatLabel]="'always'">
         <mat-label>Country code: </mat-label>
         <input matInput [(ngModel)]="gCountry" placeholder="Enter country code" (ngModelChange)="onSearch($event)" >
+        <mat-label>(e.g: SG, US, AU) </mat-label>
     </mat-form-field>
+   
+
 
 <br>
 
