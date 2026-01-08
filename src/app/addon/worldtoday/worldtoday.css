@@ -1,0 +1,11 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+
+.popup-link {
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+}

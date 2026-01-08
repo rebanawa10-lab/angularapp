@@ -490,21 +490,32 @@
             </mat-expansion-panel>
         </mat-accordion>
 
-         <mat-accordion>
+        <mat-accordion>
             <mat-expansion-panel [expanded]="true">
                <mat-expansion-panel-header>
                   <mat-panel-title>Information</mat-panel-title>
-              </mat-expansion-panel-header>
-              <a [routerLink]="['/about']" routerLinkActive="is-active" class="menu-icons" >
+               </mat-expansion-panel-header>
+              <a [routerLink]="['/worldtoday']" routerLinkActive="is-active" class="menu-icons" >                                 
+                                        <mat-icon>public</mat-icon> 
+                                        <span> World Today </span>                               
+               </a>
+            </mat-expansion-panel>
+         </mat-accordion>
+
+         <mat-accordion>
+             <mat-expansion-panel [expanded]="true">
+                <mat-expansion-panel-header>
+                  <mat-panel-title>Add-on</mat-panel-title>
+               </mat-expansion-panel-header>
+                <a [routerLink]="['/about']" routerLinkActive="is-active" class="menu-icons" >
                                         
                                         <mat-icon>group</mat-icon>
                                         <span> About </span>                               
                </a>
 
+             </mat-expansion-panel>
 
-            </mat-expansion-panel>
          </mat-accordion>
-
 
    </mat-sidenav>
 

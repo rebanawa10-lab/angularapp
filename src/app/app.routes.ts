@@ -14,8 +14,14 @@ import { Salesseo } from  './portfoliomenu/salesseo/salesseo';
 import { Salesmandtl } from  './portfoliomenu/salesmandtl/salesmandtl';
 import { Salesmanyr } from  './portfoliomenu/salesmanyr/salesmanyr';
 
+
+// Addon
+import { Worldtoday } from  './addon/worldtoday/worldtoday';
+
+
 // Info
 import { About } from './info/about/about';
+
 
 
 export const routes: Routes = [
@@ -38,6 +44,8 @@ export const routes: Routes = [
     { path: 'salesmandtl', component: Salesmandtl }, 
     { path: 'salesmanyr', component: Salesmanyr  }, 
 
+    // addon
+     { path: 'worldtoday', component: Worldtoday }, 
 
     // Info
     { path: 'about', component: About }, 
