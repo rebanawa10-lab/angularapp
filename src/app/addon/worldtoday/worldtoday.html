@@ -1,25 +1,62 @@
 <h1>World Today</h1>
 
+Show the latest events and rates for today.<br><br>
+<!-- 
+// Standard version
+
+// Search Engines
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Yahoo')" class="popup-link">Yahoo</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Yahoo')" class="popup-link">Yahoo</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Google')" class="popup-link">Google</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Google')" class="popup-link">Google</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('MSN')" class="popup-link">MSN</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('MSN')" class="popup-link">MSN</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Wiki')" class="popup-link">Wikipedia</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Wiki')" class="popup-link">Wikipedia</a>
+
+
+// Earth Minerals
+<br><br>
+    <a href="javascript:void(0)" (click)="openPopupV1('Gold')" class="popup-link">Gold</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Gold')" class="popup-link">Gold</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Silver')" class="popup-link">Silver</a>
+
+// Currency & Crypto
+<br><br>
+    <a href="javascript:void(0)" (click)="openPopupV1('SGDRate')" class="popup-link">SGD rate</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Silver')" class="popup-link">Silver</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Bitcoin')" class="popup-link">Bitcoin</a>
 
 <br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Bitcoin')" class="popup-link">Bitcoin</a>
+    <a href="javascript:void(0)" (click)="openPopupV1('Ethereum')" class="popup-link">Ethereum</a>
 
-<br><br>
-    <a href="javascript:void(0)" (click)="openPopup('Ethereum')" class="popup-link">Ethereum</a>
+
+// mat-tree-node version
+--> 
+
+<mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+  
+  <!-- This is the node template for leaf nodes -->
+  <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+    <button mat-button (click)="openPopup(node.action)">
+      {{node.name}}
+    </button>
+  </mat-tree-node>
+
+  <!-- This is the node template for expandable nodes -->
+  <mat-tree-node *matTreeNodeDef="let node; when: hasChild" matTreeNodePadding>
+    <button mat-icon-button matTreeNodeToggle class="popup-linkV2"
+            [attr.aria-label]="'toggle ' + node.name">
+      <mat-icon>
+        {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+      </mat-icon>
+    </button>
+    {{node.name}}
+  </mat-tree-node>
+
+</mat-tree>
