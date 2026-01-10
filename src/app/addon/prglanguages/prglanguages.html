@@ -234,6 +234,62 @@
 
 </table>
 
+<br>
+<!-- 
+<div class="fade-parent">
+    <div class= "fade-text"> 
+
+-->
+<div class="parent">
+    © 
+
+<div class= "hidden"> 
+<pre>
+<b>ANGULAR WORKFLOW</b>
+
+When a user opens your site (e.g. https://example.com):
+
+<span class="fake-btn">•</span> MAIN.TS (main switch), the Application Entry Point: 	
+
+        It bootstraps (starts) the Angular app by calling
+
+            script: 
+                import  bootstrapApplication  from '@angular/platform-browser';
+                import  appConfig  from './app/app.config';
+                import  App  from './app/app';
+                
+                bootstrapApplication(App, appConfig)
+                
+        It tells Angular to load App, 
+        which then loads all components, services, and routing.
+
+
+<span class="fake-btn">•</span> INDEX.HTML (load 1st the browser) The container that wraps your whole Angular app.
+
+        Contains a placeholder tag: < app-root >
+        The Root Component, Angular load your app here.
+
+        It also load CSS, icons, fonts, etc.
+
+        The main building block that holds your app's UI and routes.
+
+        Inside it, < app-root > is found.
+
+
+<span class="fake-btn">•</span> APP.TS
+
+        @Component(
+            selector: 'app-root'	// The main entrance of the Angular app	
+        )   
+        
+        
+* End-of-File    
+</pre>
+    </div>
+
+</div>
+
+
 
 
 <!-- 
@@ -247,10 +303,8 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns" class="fade-parent"></tr>
 
-</table> -->
+</table> 
 
-
-<!-- 
 <div class="img-box">
 
     // Local pc version 
@@ -300,10 +354,6 @@
     <li>About</li>
     <li>Contact</li>
   </ul>
-</div> -->
+</div> 
 
-
-
-
-
-
+-->

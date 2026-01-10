@@ -16,9 +16,10 @@
 }
 
 .parent:hover .hidden {
-  max-height: 150px;
+    max-height: 1500px;
   opacity: 1;
 }
+/*  */
 
 
 
