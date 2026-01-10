@@ -96,8 +96,13 @@ color: white;
 }
 
 /* Desktop hover */
-.box:hover .tooltip,
-/* Mobile tap */
+.box:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* iPhone tap */
+.box:focus .tooltip,
 .box:focus-within .tooltip {
   opacity: 1;
   transform: translateY(0);
