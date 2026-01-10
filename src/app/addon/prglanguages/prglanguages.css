@@ -95,7 +95,10 @@ color: white;
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.box:hover .tooltip {
+/* Desktop hover */
+.box:hover .tooltip,
+/* Mobile tap */
+.box:focus-within .tooltip {
   opacity: 1;
   transform: translateY(0);
 }
