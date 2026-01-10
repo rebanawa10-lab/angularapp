@@ -91,18 +91,17 @@ export class App implements OnInit {
 
   // popup
   ngOnInit(): void {
-     // this.isPopup = !!window.opener;
+      // this.isPopup = !!window.opener;
 
-    // if (isPlatformBrowser(this.platformId)) {
-    //   this.isPopup = !!window.opener;
-    // }
+      // if (isPlatformBrowser(this.platformId)) {
+      //   this.isPopup = !!window.opener;
+      // }
 
-    this.titleService.setTitle('REBANAWA10 - Angular Portfolio');
+      this.titleService.setTitle('REBANAWA10 - Angular Portfolio');
 
-    if (typeof window !== 'undefined') {
-      this.isPopup = !!window.opener;
-    }
-
+      if (typeof window !== 'undefined') {
+        this.isPopup = !!window.opener;
+      }
   }
 
   navigateTo(routeUrl: string): void {

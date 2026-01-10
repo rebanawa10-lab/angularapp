@@ -1,0 +1,167 @@
+:host {
+  display: block;
+  padding: 16px;
+}
+
+/* Material UI  */
+.parent {
+  position: relative;
+}
+
+.hidden {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
+}
+
+.parent:hover .hidden {
+  max-height: 150px;
+  opacity: 1;
+}
+
+
+
+
+.fade-text {
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-parent:hover .fade-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+
+/* ver1 */
+/* 
+.tooltip {
+  position: absolute;
+  top: 120%;
+  left: 0;
+  background: black;
+  color: white;
+  padding: 6px 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.6s ease;
+}
+
+.box:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+} */
+
+.table th, .table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    width: "1000px";
+}
+
+
+.box {
+  position: relative;
+  display: inline-block;
+  padding: 10px;
+  background: #cee3f6;
+  color: rgb(57, 88, 243);
+  height: 450px;
+  width: 250px;
+  border-radius: 10px; /* makes corners rounded */
+  text-indent: 10px; /* first line indent */
+  font-size: 16px;
+}
+
+/*  background: #333;
+color: white;
+*/
+
+.box-text {
+  display: block;
+  margin: 15;
+  padding-left: 16px;   /* space for fake button */
+  text-indent: -10px;   /* negative indent to keep first line aligned with bullet */
+  line-height: 1.5;     /* makes wrapped lines readable */
+}
+
+/* ver2 */
+.tooltip {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.box:hover .tooltip {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fake-btn {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 3px;
+  background: #007bff; /* color like a button */
+  color: #cee3f6;
+  border-radius: 10%; /* circular */
+  text-align: left;
+  line-height: 20px;
+  font-size: 12px;
+  vertical-align: middle;
+  pointer-events: none; /* makes it not clickable */
+}
+
+/* color: white; */
+
+
+/* Parent ver1 and ver2 */
+/* .parent {
+    
+  width: 250px;
+  padding: 10px;
+  background: #333;
+  color: white;
+  cursor: pointer;
+} */
+
+/* test:
+
+border-style: dotted;
+*/
+
+/* Parent ver1 */
+/* .hidden {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease;
+}
+
+.parent:hover .hidden {
+  max-height: 200px;
+} */
+
+/* Parent ver2  */
+/* .hidden {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 3.6s ease, opacity 2.2s ease;
+}
+
+.parent:hover .hidden {
+  max-height: 500px;
+  opacity: 1;
+} */
+
+
+/* image */
+.img-box img {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+
+.img-box:hover img {
+  opacity: 1;
+}

@@ -17,6 +17,7 @@ import { Salesmanyr } from  './portfoliomenu/salesmanyr/salesmanyr';
 
 // Addon
 import { Worldtoday } from  './addon/worldtoday/worldtoday';
+import { Prglanguages } from  './addon/prglanguages/prglanguages';
 
 
 // Info
@@ -45,7 +46,9 @@ export const routes: Routes = [
     { path: 'salesmanyr', component: Salesmanyr  }, 
 
     // addon
-     { path: 'worldtoday', component: Worldtoday }, 
+    { path: 'worldtoday', component: Worldtoday }, 
+    { path: 'prglanguages', component: Prglanguages }, 
+ 
 
     // Info
     { path: 'about', component: About }, 

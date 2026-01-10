@@ -9,3 +9,13 @@
   outline: none;
   cursor: pointer;
 }
+
+
+.popup-linkV2 {
+  text-decoration: underline;
+  color: blue;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}

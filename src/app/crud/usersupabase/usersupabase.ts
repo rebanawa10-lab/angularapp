@@ -59,11 +59,14 @@ export class Usersupabase implements OnInit  {
 
   // VER1
   // users: any[] = [];
+
   // VER2 for edit func
   users: User[] = [];
 
+
   // VER1
   // newUser: User = { name: '', email: '' };
+
   // VER2 for edit func
   newUser: NewUser = {
     name: '',
@@ -115,6 +118,7 @@ export class Usersupabase implements OnInit  {
   //     this.usersSrv.testApi();
   // }
 
+
   // PROD API VER1
   // async ngOnInit() {
   //   // console.log('supabaseUrl: ' + environment.supabaseUrl);
@@ -122,6 +126,7 @@ export class Usersupabase implements OnInit  {
   //   console.log('ngOnInit() loaded');
   //   this.users = await this.usersSrv.getUsers();  // ✅ use injected instance
   // }
+
 
   // PROD API VER2 - Realtime
   async ngOnInit() {
@@ -155,7 +160,8 @@ export class Usersupabase implements OnInit  {
 
   }
 
-  // VER3
+  // Add Func()
+  // VER1
   // async add() {
   //   // VER1
   //   // const user = await this.usersSrv.addUser(this.newUser);
@@ -170,7 +176,7 @@ export class Usersupabase implements OnInit  {
   //   this.cdr.detectChanges(); // force Angular to update view
   // }
 
-  // VER4
+  // VER2
   // async add() {
   //     const created = await this.usersSrv.addUser(this.newUser);
   //     this.users = [...this.users, created];
@@ -178,7 +184,7 @@ export class Usersupabase implements OnInit  {
   //     this.cdr.detectChanges(); // force Angular to update view
   // }
 
-  // VER5
+  // VER3
   async add(form: any) {
       const created = await this.usersSrv.addUser(this.newUser);
 
@@ -201,8 +207,5 @@ export class Usersupabase implements OnInit  {
     this.users = this.users.filter(u => u.id !== id);
     this.cdr.detectChanges(); // force Angular to update view
   }
-
-
-  
 
 }

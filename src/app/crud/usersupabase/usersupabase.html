@@ -6,7 +6,7 @@ DB: supabase
 -->
 
 <form #userForm="ngForm">
-        <div class="div1">
+    <div class="div1">
         <mat-form-field appearance="outline">
             <mat-label>Name</mat-label>
             <input
@@ -43,67 +43,18 @@ DB: supabase
             </mat-error>
         </mat-form-field>
 
-            &nbsp;&nbsp;
-            <!-- 
-            <button 
-                mat-raised-button 
-                color="primary" 
-                (click)="add()"
-                [disabled]="nameModel.invalid || emailModel.invalid">Add
-            </button>
-            -->
-            <button
-                mat-raised-button
-                color="primary"
-                (click)="add(userForm)"
-                [disabled]="userForm.invalid"
-            >
-                Add
-            </button>
+        &nbsp;&nbsp;
+        
+        <button
+            mat-raised-button
+            color="primary"
+            (click)="add(userForm)"
+            [disabled]="userForm.invalid" >
+            Add
+        </button>
 
-        </div>
+    </div>
 </form>
-
-
-<!-- 
-<table border="1" width="100%">
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Action</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let user of users; let i = index">
-     
-        <td>{{ user.id }}</td>
-
-        <td>
-            <span *ngIf="!user.editing">{{ user.name }}</span>
-            <input title="UserName" *ngIf="user.editing" [(ngModel)]="user.name" />
-        </td>
-
-        <td>
-            <span *ngIf="!user.editing">{{ user.email }}</span>
-            <input title="UserEmail" *ngIf="user.editing" [(ngModel)]="user.email" />
-        </td>
-
-        <td>
-            <button *ngIf="!user.editing" (click)="startEdit(user)">Edit</button>
-
-            <button *ngIf="user.editing" (click)="saveEdit(user)">Save</button>
-            <button *ngIf="user.editing" (click)="cancelEdit(user)">Cancel</button>
-
-            <button *ngIf="!user.editing" (click)="delete(user.id)">Delete</button>
-
-        </td>
-
-    </tr>
-  </tbody>
-</table>
--->
 
 <table mat-table [dataSource]="users" class="mat-elevation-z8" style="width:100%">
 

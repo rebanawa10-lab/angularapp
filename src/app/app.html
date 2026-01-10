@@ -340,96 +340,76 @@
 <!-- * * * * * * * * * * End of Placeholder  * * * * * * * * * * * * -->
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->
 
+ <!--  <mat-sidenav #drawer mode="side" opened> 
+      <mat-nav-list>
+          <mat-list-item class="underline-hover">
+              <a [routerLink]="['/home']" routerLinkActive="is-active" class="menu-icons" >
+                  <mat-icon>house/mat-icon></mat-icon>
+                  <span>Home</span>
+              </a>
+          </mat-list-item>   
+      </mat-nav-list>
+
+      // Test
+      <mat-expansion-panel>
+            <mat-nav-list>
+                <span>Test1 </span>
+            </mat-nav-list>
+            <mat-nav-list>
+                <span>Test2 </span>
+            </mat-nav-list>
+      </mat-expansion-panel>
+
+      // My Portfolio 
+      <mat-list-item class="underline-hover">
+            <a [routerLink]="['/portfolio']" routerLinkActive="is-active" class="menu-icons" >
+              <mat-icon>business_center</mat-icon>
+              <span>My Portfolio</span>
+            </a>
+      </mat-list-item>
+           
+      // Portfolio Parent Item 
+      <div class="menu-item-with-sub">
+          <mat-list-item class="underline-hover">
+              <mat-icon matListIcon>business_center</mat-icon>Portfolio...
+          </mat-list-item>
+                // Sub Menu 
+                <div class="submenu">
+                    <mat-nav-list>                         
+                          <mat-list-item class="underline-hover">
+                              <a [routerLink]="['/salesman']" routerLinkActive="is-active" class="menu-icons" >
+                                  <mat-icon>dashboard</mat-icon>
+                                  <span> Salesman Executive xx </span>                            
+                              </a>
+                          </mat-list-item>
+                    </mat-nav-list>
+                </div>
+      </div>
+            
+      <mat-list-item>
+        <a [routerLink]="['/settings']" routerLinkActive="is-active" class="menu-icons" >
+          <mat-icon>settings</mat-icon>
+          <span>Settings</span>
+        </a>
+      </mat-list-item>
+ -->
+
 
 
 <!--  Sidebar -->
 <mat-sidenav-container class="app-container" *ngIf="!isPopup">
- <!--  <mat-sidenav #drawer mode="side" opened> -->
-
     <mat-sidenav class="app-sidenav" #drawer 
                [mode]="isSmallScreen ? 'over' : 'side'"
                [opened]="!isSmallScreen">
-
         <mat-toolbar>Menu</mat-toolbar>
-
-        <!-- 
-         <mat-nav-list>
-
-          <mat-list-item class="underline-hover">
-                <a [routerLink]="['/home']" routerLinkActive="is-active" class="menu-icons" >
-                    <mat-icon>house/mat-icon></mat-icon>
-                    <span>Home</span>
-                </a>
-            </mat-list-item>   
-           </mat-nav-list>
-        -->
-           
-
-
-       
-         <mat-nav-list>
-            <!-- Test
-            <mat-expansion-panel>
-                <mat-nav-list>
-                    <span>Test1 </span>
-                </mat-nav-list>
-                <mat-nav-list>
-                    <span>Test2 </span>
-                </mat-nav-list>
-
-            </mat-expansion-panel>
-            -->
-
+        <mat-nav-list>
             <mat-list-item class="underline-hover">
                 <a [routerLink]="['/home']" routerLinkActive="is-active" class="menu-icons" >
                     <mat-icon>house/mat-icon></mat-icon>
                     <span>Home</span>
                 </a>
             </mat-list-item>   
-
-            <!-- 
-            // My Portfolio 
-            <mat-list-item class="underline-hover">
-                <a [routerLink]="['/portfolio']" routerLinkActive="is-active" class="menu-icons" >
-                  <mat-icon>business_center</mat-icon>
-                  <span>My Portfolio</span>
-                </a>
-
-            </mat-list-item>
-           
-            // Portfolio Parent Item 
-            <div class="menu-item-with-sub">
-                <mat-list-item class="underline-hover">
-                    <mat-icon matListIcon>business_center</mat-icon>Portfolio...
-                </mat-list-item>
-                      // Sub Menu 
-                      <div class="submenu">
-                          <mat-nav-list>                         
-                                <mat-list-item class="underline-hover">
-                                    <a [routerLink]="['/salesman']" routerLinkActive="is-active" class="menu-icons" >
-                                        <mat-icon>dashboard</mat-icon>
-                                        <span> Salesman Executive xx </span>                            
-                                    </a>
-                                </mat-list-item>
-                          </mat-nav-list>
-                      </div>
-            </div>
-            -->
-
-
-            <!-- 
-            <mat-list-item>
-              <a [routerLink]="['/settings']" routerLinkActive="is-active" class="menu-icons" >
-                <mat-icon>settings</mat-icon>
-                <span>Settings</span>
-              </a>
-            </mat-list-item>
-            -->
-
-
-        </mat-nav-list>
-
-        
+        </mat-nav-list>     
         <mat-accordion>
             <mat-expansion-panel [expanded]="true">
               <mat-expansion-panel-header>
@@ -437,7 +417,10 @@
                   CRUD
                 </mat-panel-title>
               </mat-expansion-panel-header>
-               <!-- Enable only when working on Local host/PC  
+               <!-- Enable only when working on Local host/PC. It point to localhost 
+                    Users in JSON-Server
+                    apiUrlJSON: 'http://localhost:3000',
+
                <a [routerLink]="['/usersinfo']" routerLinkActive="is-active" class="menu-icons" >                               
                                         <mat-icon>group</mat-icon>
                                         <span> Users in JsonServer</span>                        
@@ -449,8 +432,6 @@
                                         <span> Users Maintenance</span>                        
                </a>
                <br>
-
-
             </mat-expansion-panel>
         </mat-accordion>
 
@@ -464,29 +445,16 @@
                                         <mat-icon>group</mat-icon>
                                         <span> Sales executive </span>                                     
                </a>
-
                <br>
                <a [routerLink]="['/salesmanyr']" routerLinkActive="is-active" class="menu-icons" >
                                         <mat-icon>dashboard</mat-icon>
-                                        <span> Sales dashboard </span>
-                                        <!-- <span>{{ this.Salesman }}</span> -->
+                                        <span> Sales dashboard </span>                             
                </a>
-
                 <br>
                 <a [routerLink]="['/salesseo']" routerLinkActive="is-active" class="menu-icons" >                                 
                                         <mat-icon>fact_check</mat-icon>
                                         <span> Executive list </span>                                     
                </a>
-
-<!-- 
-                 <br>
-                <a [routerLink]="['/salesmandtl']" routerLinkActive="is-active" class="menu-icons" >                                 
-                                        <mat-icon>fact_check</mat-icon>
-                                        <span> Load Executive details </span>                                     
-               </a>
--->
-
-
             </mat-expansion-panel>
         </mat-accordion>
 
@@ -498,11 +466,16 @@
               <a [routerLink]="['/worldtoday']" routerLinkActive="is-active" class="menu-icons" >                                 
                                         <mat-icon>public</mat-icon> 
                                         <span> World Today </span>                               
-               </a>
+              </a>
+              <br>
+              <a [routerLink]="['/prglanguages']" routerLinkActive="is-active" class="menu-icons" >                                 
+                                        <mat-icon>public</mat-icon> 
+                                        <span> Program Tools </span>                               
+              </a>
             </mat-expansion-panel>
-         </mat-accordion>
+        </mat-accordion>
 
-         <mat-accordion>
+        <mat-accordion>
              <mat-expansion-panel [expanded]="true">
                 <mat-expansion-panel-header>
                   <mat-panel-title>Add-on</mat-panel-title>
@@ -512,16 +485,12 @@
                                         <mat-icon>group</mat-icon>
                                         <span> About </span>                               
                </a>
-
              </mat-expansion-panel>
-
-         </mat-accordion>
-
+        </mat-accordion>
    </mat-sidenav>
 
   <mat-sidenav-content>
-      <mat-toolbar>
-            <!-- <button mat-icon-button (click)="drawer.toggle()"> -->
+      <mat-toolbar>    
             <button mat-icon-button (click)="drawer.toggle()" >
                 <mat-icon>menu</mat-icon>
             </button>
@@ -535,12 +504,9 @@
   </mat-sidenav-content>
 </mat-sidenav-container>
 
-
 <ng-container *ngIf="isPopup">
-  <router-outlet></router-outlet>
+    <router-outlet></router-outlet>
 </ng-container>
-
-
 
 
 <!-- 
